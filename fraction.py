@@ -1,22 +1,28 @@
 class Number:
 
-    def __init__(self, value, power=1):
+    def __init__(self, value):
         self.value = value
-        self.power = power
 
-    def calc_pow(self):
-        res = 1
-        for i in range(self.power):
-            res *= self.value
-        return res
+    def get_fraction(self):
+
+        if(type(self.value) == 'int'):
+            return self.value, 1
+
+        
+
+        
+
+
 
 
 class Fraction:
 
-    def __init__(self, num:Number, den:Number):
+    def __init__(self, num:Number, den:Number, npow=1, dpow=1):
 
         self.num:int = num
         self.den:int = den
+        self.npow:int = npow
+        self.dpow:int = dpow
 
     def show_fraction(self):
         if self.den != 1:
@@ -40,6 +46,7 @@ class Fraction:
         self.den = int(self.den/d)
         self.num = int(self.num/d)
 
+    
 
 
 
